@@ -8,14 +8,16 @@ This analytics dashboard provides business executives, product managers, and dat
 
 1. **Executive Metrics Dashboard**: Tracks core SaaS/E-commerce KPIs: revenue, customer lifetime value (LTV), paying user trends, and average revenue per user (ARPU). 
 2. **Revenue drivers decomposition & Period Comparison Analysis**: Deconstructs daily revenue flows across available demographic and categorical dimensions (e.g., Age Group, Gender, Location, Product Category) and performs dynamic period-over-period variance analysis to identify key drivers of revenue change for executive decisions.
+3. **Revenue Composition & Seasonality Analytics**: Evaluates cross-sectional revenue distribution across geographic locations, product categories, year-over-year monthly seasonality trends, and age-gender demographic segments.
 
 ---
 
 ## 📊 Dashboard Views & Architecture
 
-### 1. Key Performance Indicators (KPIs) & Predictive Trends
+### 1. Key Performance Indicators (KPIs) Trends
 
 The upper executive view focuses on overall business health across four core metrics:
+<img width="1706" height="894" alt="image" src="https://github.com/user-attachments/assets/03b65a4b-1b9b-4d9f-ab04-902fbf3253b8" />
 
 | Metric | Current Value | Variance / Change | Baseline | Description |
 | :--- | :---: | :---: | :---: | :--- |
@@ -30,9 +32,10 @@ The upper executive view focuses on overall business health across four core met
 
 ---
 
-### 2. Revenue Trend Decomposition & Variance Analysis
+### 2. Revenue drivers decomposition analysis
 
 The second view enables granular root-cause analysis of revenue shifts between customizable comparative windows.
+<img width="1920" height="1080" alt="Revenue decomposition gif" src="https://github.com/user-attachments/assets/090490f0-5eb9-498a-b745-e91ea2f8a536" />
 
 #### Interactive Controls & Parameters:
 * **Dimension Selector (`Colour by`)**: Dynamic slicing by *Product category*, *Age group* (18–25, 25–45, 45–60, 60+, Under 18), *Gender*, or *Location*.
@@ -50,14 +53,16 @@ The second view enables granular root-cause analysis of revenue shifts between c
 
 ---
 
-## 📁 Dataset Source
+### 3. Revenue Composition & Seasonality Analytics
 
-The dataset used in this analytics dashboard is sourced from Kaggle:
-* **Dataset Name**: E-Commerce Dataset for Data Analysis
-* **URL**: [Kaggle Dataset: ecommerce-dataset-for-data-analysis](https://www.kaggle.com/datasets/shrishtimanja/ecommerce-dataset-for-data-analysis)
-* **Author**: Shrishti Manja
+This view provides high-level structural visibility into revenue distribution across geographic markets, catalog categories, historical seasonal patterns, and target demographic cohorts.
+<img width="1676" height="878" alt="image" src="https://github.com/user-attachments/assets/747a99b2-585f-4aed-9098-8b086ecd9eed" />
 
----
+#### Key Visual Components:
+* **Revenue Share by Location (Treemap)**: Highlights top geographic revenue generators led by **Delhi (20%)** and **Mumbai (19%)**, followed by **Bangalore (15%)**, **Hyderabad (10%)**, and **Chennai (8%)**.
+* **Revenue Share by Product Category (Horizontal Bar Chart)**: Ranks core catalog segments by net revenue volume. **Electronics** dominates with **32%** of total revenue, followed by **Clothing (18%)**, **Beauty and Health (16%)**, **Sports & Fitness (10%)**, and **Home & Kitchen (10%)**.
+* **Monthly Revenue Seasonality (Multi-Year Line Chart)**: Tracks monthly revenue patterns across historical years (2020–2024). Displays consistent annual cyclicality with significant dips around **February** and **June**, followed by dynamic growth trajectories surging into the **Q4 holiday season (Oct–Dec)**.
+* **Revenue Share by Gender and Age Group (Population Pyramid / Demographic Grid)**: Breaks down spend share across Gender (*Female*, *Male*, *Other*) and Age Groups (*under 18*, *18–25*, *25–45*, *45–60*, *60 and above*). Highlights peak revenue concentration in the **25–45 cohort** (14% Female, 12% Male, 14% Other) and **18–25 cohort** (11% Female, 10% Male, 9% Other).
 
 ## 🛠️ Data Pipeline & Technology Stack
 
@@ -74,8 +79,18 @@ The dataset used in this analytics dashboard is sourced from Kaggle:
 
 ## 🚀 Key Business Insights derived from the Dashboards
 
-1. **Revenue vs. User Count Divergence**: While Daily Paying Users dropped by **7.9%** (down to 28) and Total Revenue dipped by **2.7%**, **ARPU rose by +6.9%** (to 3,413), indicating higher spend per remaining customer.
-2. **Primary Churn / Drop-off Driver**: Decomposition reveals that the **25–45 age cohort** was the primary negative contributor to the recent revenue decline, dropping by **-$3K in average daily revenue** (-3% contribution to change).
-3. **Growth Bright Spot**: The **18–25 demographic cohort** counteracted negative trends with a **+$1K average daily revenue gain** (+1% positive contribution to change).
+1. **Revenue Concentration**: Over **39% of total revenue** originates from just two major hubs—**Delhi (20%)** and **Mumbai (19%)**. Expanding localized promotions in secondary tier-1 cities like Bangalore (15%) and Hyderabad (10%) represents a key expansion vector.
+2. **Product Portfolio Dominance**: **Electronics (32%)** and **Clothing (18%)** together generate half of the total net revenue, making total enterprise revenue highly sensitive to supply chain or stock fluctuations in these two verticals.
+3. **Predictable Seasonal Dips**: Multi-year trends reveal clear recurring drops in **February** and **June** across all historical years, providing inventory planning units with predictable cycles to clear stock and run mid-year promotional campaigns ahead of Q4 surges.
+4. **Core Demographic Drivers**: Customers aged **25–45** are the largest revenue contributors across all genders (comprising ~40% total demographic revenue share).
+5. **Revenue vs. User Count Divergence**: While Daily Paying Users dropped by **7.9%** (down to 28) and Total Revenue dipped by **2.7%**, **ARPU rose by +6.9%** (to 3,413), indicating higher spend per remaining customer.
+6. **Primary Churn / Drop-off Driver**: Decomposition reveals that the **25–45 age cohort** was the primary negative contributor to the recent revenue decline, dropping by **-$3K in average daily revenue** (-3% contribution to change).
+---
 
+## 📁 Dataset Source
+
+The dataset used in this analytics dashboard is sourced from Kaggle:
+* **Dataset Name**: E-Commerce Dataset for Data Analysis
+* **URL**: [Kaggle Dataset: ecommerce-dataset-for-data-analysis](https://www.kaggle.com/datasets/shrishtimanja/ecommerce-dataset-for-data-analysis)
+* **Author**: Shrishti Manja
 ---
