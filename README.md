@@ -1,14 +1,14 @@
 # Executive-Revenue-monitoring-dashboard-for-Ecommerce-company
-A comprehensive BI dashboard built in Tableau for executive-level financial performance tracking, user monetization metrics, and period-over-period revenue decomposition analysis to identify key revenue drivers.
+A comprehensive Tableau BI dashboard for executive-level financial performance tracking, user monetization metrics, and period-over-period revenue decomposition analysis to identify key revenue drivers.
 ---
 
 ## 📌 Executive Summary
 
-This analytics dashboard provides business executives, product managers, and data analysts with actionable insights into the performance of the company's north star metrics. It is split into two primary views:
+This analytics dashboard provides business executives, product managers, and data analysts with an overview of the key financial metrics and drivers of the company. It is split into three primary views:
 
-1. **Executive Metrics Dashboard**: Tracks core SaaS/E-commerce KPIs: revenue, customer lifetime value (LTV), paying user trends, and average revenue per user (ARPU). 
+1. **Executive Metrics Dashboard**: Tracks latest trend of core SaaS/E-commerce KPIs: revenue, customer lifetime value (LTV), paying user trends, and average revenue per user (ARPU). 
 2. **Revenue drivers decomposition & Period Comparison Analysis**: Deconstructs daily revenue flows across available demographic and categorical dimensions (e.g., Age Group, Gender, Location, Product Category) and performs dynamic period-over-period variance analysis to identify key drivers of revenue change for executive decisions.
-3. **Revenue Composition & Seasonality Analytics**: Evaluates cross-sectional revenue distribution across geographic locations, product categories, year-over-year monthly seasonality trends, and age-gender demographic segments.
+3. **Customer Insights at a Glance**: Empowers product owners to make data-driven decisions. This dashboard delivers immediate clarity on revenue distribution by geography and product category, isolates dominant age-gender segments, and tracks monthly year-over-year seasonality trends.
 
 ---
 
@@ -16,20 +16,23 @@ This analytics dashboard provides business executives, product managers, and dat
 
 ### 1. Key Performance Indicators (KPIs) Trends
 
-The upper executive view focuses on overall business health across four core metrics:
+Your business pulse in one place. Monitor your primary North-Star metrics alongside real-time trend analysis and performance health checks:
 <img width="1706" height="894" alt="image" src="https://github.com/user-attachments/assets/03b65a4b-1b9b-4d9f-ab04-902fbf3253b8" />
-
-| Metric | Current Value | Variance / Change | Baseline | Description |
+<!--
+| Metric | Current Value | W-o-W % Change | Baseline | Description |
 | :--- | :---: | :---: | :---: | :--- |
 | **Total Revenue** | **$1,304K** | 🔻 -2.7% | $89K Daily Avg | Total net cumulative revenue across the monitored timeframe with historical trends and short-term projected growth path. |
 | **Average LTV** | **3.3K** | 🔻 -10.4% | ~3K Customer LTV | Average Lifetime Value per customer, detailing historical volatility and forecasted trajectory. |
 | **Daily Paying Users** | **28** | 🔻 -7.9% | 30 Customers Avg | Daily active paying customer count, tracking retention dips and projected conversion recovery. |
-| **ARPU (Avg Revenue Per User)**| **3,413** | 🟢 +6.9% | $3.0K Baseline | Average Revenue Per User, showing consistent upward momentum despite user count contraction. |
+| **ARPU (Avg Revenue Per User)**| **3,413** | 🟢 +6.9% | $3.0K Baseline | Average Revenue Per User, showing consistent upward momentum despite user count contraction. |-->
 
 #### Key Visual Features:
-* **Historical vs. Forecast Breakdown**: Blue solid lines represent actual historical performance (June 13 – September 1); orange lines display statistical forecasting and predictive trends (September 2 – September 21).
-* **Baseline Threshold Alignment**: Horizontal dashed red reference lines indicate target or historical mean baselines (e.g., $89K daily net revenue, 30 paying users daily, $3.0K ARPU).
-
+* **Historical vs. Current Breakdown**: Blue solid lines represent actual historical performance; orange lines display latest trends.
+* **Baseline Threshold Alignment**: Horizontal dashed red reference lines indicate historical mean baselines.
+* **Percentage change callout**: Clear visual indicator highlighting the latest percentage growth or decline.
+  
+#### Data Constraint:
+* **Missing DAU Metric**: Daily Active User (DAU) data is unavailable in this dataset, preventing the calculation of a daily conversion rate. While daily conversion is the preferred KPI for evaluating sales performance, Average LTV was chosen for this analysis. 
 ---
 
 ### 2. Revenue drivers decomposition analysis
@@ -38,16 +41,19 @@ The second view enables granular root-cause analysis of revenue shifts between c
 <img width="1920" height="1080" alt="Revenue decomposition gif" src="https://github.com/user-attachments/assets/090490f0-5eb9-498a-b745-e91ea2f8a536" />
 
 #### Interactive Controls & Parameters:
-* **Dimension Selector (`Colour by`)**: Dynamic slicing by *Product category*, *Age group* (18–25, 25–45, 45–60, 60+, Under 18), *Gender*, or *Location*.
-* **Date Range Filter**: Global date range slider (e.g., `15/7/2024` – `18/9/2024`).
+* **Dimension Selector (`Colour by`)**: Dynamic slicing by available demographic and categorical dimensions (*Product category*, *Age group*, *Gender*, or *Location*).
+* **Date Range Filter**: Date range slider for available date range.
 * **Period Comparison Controls**:
-  * **Period 1 Range**: `19/8/2024` – `1/9/2024` (Baseline comparative period highlighted by vertical red dashed boundary markers).
-  * **Period 2 Range**: `2/9/2024` – `15/9/2024` (Target comparison period highlighted by vertical blue dashed boundary markers).
+  * **Period 1 Range**: Baseline period.
+  * **Period 2 Range**: Target period.
 
 #### Dynamic Visual Analysis Panels:
-1. **Stacked Daily Revenue Bar Chart**: Visualizes day-over-day net revenue stacked by demographic cohort (e.g., age groups), highlighting structural shifts across Period 1 and Period 2 windows.
+1. **Stacked Daily Revenue Bar Chart**: Visualizes day-over-day net revenue stacked by user selected dimension (e.g., Product category/ Age groups), highlighting structural shifts across Baseline and Target windows.
 2. **Top Contributors to Change Breakdown**:
-   * **Period 1 Net Amount Avg**: Absolute average revenue volume generated by each segment during Period 1 (e.g., *25-45* age group leading at $39K, followed by *18-25* at $28K and *45-60* at $18K).
+   * **Avg daily revenue**:
+      - <ins>Horizontal bars</ins>: Absolute average revenue volume generated by each segment during the baseline period.
+      - <ins>Vertical reference line</ins>: Visual representation of average revenue volume  during target period.
+      - <ins>Delta Label</ins>: Highlights the numeric variance between selected periods.
    * **Period Avg Daily Difference**: Net dollar difference in daily averages between Period 1 and Period 2 for each cohort (e.g., -$3K daily drop in *25-45*, +$1K gain in *18-25*).
    * **Percentage Contribution to Change**: Normalized impact percentage of each dimension segment on the total net variance (-3% impact from *25-45*, +1% gain from *18-25*).
 
